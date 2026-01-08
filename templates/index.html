@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Music Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎵 Discover</h1>
+            <p class="subtitle">AI-Powered Music Recommendations</p>
+        </div>
+
+        <div class="content">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="basic">Basic Search</button>
+                <button class="tab-btn" data-tab="similar">Find Similar</button>
+            </div>
+
+
+            <div id="basic-tab" class="tab-content active">
+                <form id="recommend-form">
+                    <div class="form-group">
+                        <label for="interests">Interests</label>
+                        <input 
+                            type="text" 
+                            id="interests" 
+                            name="interests" 
+                            placeholder="gaming, coding, fitness, traveling"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genres">Genres</label>
+                        <input 
+                            type="text" 
+                            id="genres" 
+                            name="genres" 
+                            placeholder="indie, hip-hop, electronic, jazz"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mood">Mood</label>
+                        <input 
+                            type="text" 
+                            id="mood" 
+                            name="mood" 
+                            placeholder="energetic, chill, melancholic, focused"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="artists">Favorite Artists</label>
+                        <input 
+                            type="text" 
+                            id="artists" 
+                            name="artists" 
+                            placeholder="The Weeknd, Kendrick Lamar, Dua Lipa"
+                        >
+                    </div>
+
+                    <button type="submit" class="btn">Get Recommendations</button>
+                </form>
+            </div>
+
+            <div id="similar-tab" class="tab-content">
+                <form id="similar-form">
+                    <div class="form-group">
+                        <label for="similar-artist">Artist</label>
+                        <input 
+                            type="text" 
+                            id="similar-artist" 
+                            name="artist" 
+                            placeholder="The Weeknd"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="similar-track">Song</label>
+                        <input 
+                            type="text" 
+                            id="similar-track" 
+                            name="track" 
+                            placeholder="Blinding Lights"
+                        >
+                    </div>
+
+                    <button type="submit" class="btn">Find Similar</button>
+                </form>
+            </div>
+
+            <div id="results">
+                <ul id="recommendations-list"></ul>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <p>Finding perfect songs for you</p>
+            </div>
+
+            <div id="error" class="error hidden">
+                <p id="error-message"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

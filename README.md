@@ -18,15 +18,3 @@ An intelligent music recommendation app powered by OpenRouter AI and Last.fm API
 - Frontend: HTML, CSS, JavaScript
 - Styling: Glassmorphism design pattern
 
-## Installation
-
-### Prerequisites
-- Python 3.8+
-- pip (Python package manager)
-
-### Steps
-
-1. Clone the repository
-```bash
-git clone <repo-url>
-cd music-recommender
